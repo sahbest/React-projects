@@ -1,23 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Button, Typography } from "@mui/material";
 import { style } from "./Styles";
+import emailjs from "@emailjs/browser";
 
 const Contact1 = () => {
+  const formRef = useRef();
   const initialValue = { name: "", gmail: "", desc: "" };
   const [formValue, setFormValue] = useState(initialValue);
   const [formError, setFormError] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    await setFormError(validate(formValue));
-    setIsSubmit(true);
-  };
-  useEffect(() => {
-    if (Object.keys(formError).length === 0 && isSubmit) {
-      console.log(formError);
-    }
-  }, [formError]);
 
   const validate = (value) => {
     const errors = {};
@@ -38,6 +29,34 @@ const Contact1 = () => {
     }
     return errors;
   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await setFormError(validate(formValue));
+    setIsSubmit(true);
+
+    await emailjs
+      .sendForm(
+        "service_dh0pi0d",
+        "template_y1p030k",
+        formRef.current,
+        "64L_Uepd4_yajAOOR"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setFormValue({ name: "", gmail: "", desc: "" });
+  };
+
+  useEffect(() => {
+    if (Object.keys(formError).length === 0 && isSubmit) {
+      console.log(formError);
+    }
+  }, [formError, isSubmit]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,11 +65,12 @@ const Contact1 = () => {
   };
   return (
     <div
+      id="contact"
       style={{
-        height: "90vh",
+        height: "100%",
         backgroundImage: 'url("./images/contact.jpg")',
         backgroundSize: "cover",
-        // marginTop: "30px",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Typography variant="h4" color="white" align="center" my="10px">
@@ -64,7 +84,7 @@ const Contact1 = () => {
           borderRadius: "10px",
         }}
       >
-        <form onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleSubmit}>
           <div>
             <label style={{ color: "white" }}>NAME</label>
           </div>
@@ -98,10 +118,10 @@ const Contact1 = () => {
               What types of projects did you have for me
             </label>
           </div>
-          <select style={style.input}>
-            <option>Frontend projects </option>
-            <option>Backendend projects </option>
-            <option>Fullstack projects </option>
+          <select style={style.input} name="project" onChange={handleChange}>
+            <option value="frontend project">Frontend project </option>
+            <option value=" backend project">Backendend project </option>
+            <option value=" fullstack project">Fullstack project </option>
           </select>
           <div>
             <label style={{ color: "white" }}>DESCRIPTION</label>

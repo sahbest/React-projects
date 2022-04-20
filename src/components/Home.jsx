@@ -6,6 +6,7 @@ const Home = () => {
   return (
     <Grid
       container
+      id="home"
       spacing={4}
       align="center"
       px="30PX"
@@ -63,7 +64,7 @@ const Home = () => {
           color="rgba(255, 255, 255, 0.9)"
           sx={{ fontweight: "bold" }}
         >
-          FULL STACK MERN DEVELOPER
+          <span> A FULL STACK MERN DEVELOPER</span>
         </Typography>
         <Typography
           variant="h6"
@@ -72,7 +73,7 @@ const Home = () => {
           maxWidth={350}
         >
           I develop beautiful websites and interface using the modern react
-          framework and also build restful api with node and express framwork
+          library and also build restful api with node and express framwork
         </Typography>
       </Grid>
       <Grid item xs={12}>

@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 
 const Faqs = () => {
   return (
-    <>
+    <div id="faq">
       <Typography variant="h4" color="white" my="50px" textAlign="center">
         FREQUENTLY ASKED QUESTIONS
       </Typography>
@@ -14,7 +14,7 @@ const Faqs = () => {
           return <Faq {...item} key={item.id} />;
         })}
       </div>
-    </>
+    </div>
   );
 };
 

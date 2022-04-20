@@ -7,13 +7,13 @@ import { Card, CardActionArea, CardContent, CardMedia } from "@mui/material";
 
 const About = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" id="about">
       <Typography variant="h4" color="white" align="center" m="10px">
         ABOUT ME
       </Typography>
       <Grid container spacing={3}>
         <Grid item sx={{}} xs={12} sm={6}>
-          <img src="./images/10.png" alt="img" />
+          <img src="./images/sahbest.jpg" alt="img" />
         </Grid>
         <Grid
           item
@@ -96,7 +96,7 @@ const About = () => {
         <Grid item xs={12} sm={6}>
           <Card sx={{ minHeight: { sm: "29em", md: "15em" } }}>
             <CardActionArea>
-              <CardMedia image="./images/code.jpg" sx={{ height: "40vh" }} />
+              <CardMedia image="./images/relax.jpg" sx={{ height: "40vh" }} />
               <CardContent>
                 <Typography variant="h5" align="center" my="10px">
                   RELAXING

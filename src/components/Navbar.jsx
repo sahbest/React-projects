@@ -1,7 +1,7 @@
 import React from "react";
-// import { style, appbar } from "./Styles";
-import { FaBars, FaFacebook } from "react-icons/fa";
-import { Badge, Typography, AppBar, Toolbar, Box, Avatar } from "@mui/material";
+import { FaBars, FaGithub } from "react-icons/fa";
+import { Typography, AppBar, Toolbar, Box, Avatar } from "@mui/material";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = ({ setShowside }) => {
   return (
@@ -18,10 +18,21 @@ const Navbar = ({ setShowside }) => {
           BUILD YOUR WEBSITE
         </Typography>
         <Box sx={{ display: "flex", alignItem: "center" }}>
-          <Avatar src="./images/10.png" />
-          <Badge badgeContent={3}>
-            <FaFacebook style={{ fontSize: "40px", marginLeft: "15px" }} />
-          </Badge>
+          <Link to="#about" style={{ textDecoration: "none" }} smooth>
+            <Avatar src="./images/sahbest.jpg" />
+          </Link>
+
+          <FaGithub
+            style={{
+              fontSize: "40px",
+              marginLeft: "15px",
+              cursor: "pointer",
+              color: "rgba(256,256,256,.7)",
+            }}
+            onClick={() => {
+              window.open("https://www.github.com/sahbest", "_blank");
+            }}
+          />
         </Box>
       </Toolbar>
     </AppBar>

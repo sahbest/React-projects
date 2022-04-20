@@ -30,7 +30,7 @@ code {
   background-color: rgba(12, 118, 211, 0.872);
   height: 0;
   visibility: hidden;
-  transition: 0.5s all linear;
+  transition: 1.5s all linear;
   overflow: hidden;
   z-index: 99;
 }
@@ -75,4 +75,8 @@ jhj {
   100% {
     transform: translateY(-200px);
   }
+}
+
+img {
+  border-radius: 10px; 
 }

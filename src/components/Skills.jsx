@@ -9,7 +9,7 @@ const Skill = () => {
   const [value, setValue] = useState(0);
   const { head, info1, info2 } = Data[value];
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" id="skill">
       <Typography
         variant="h4"
         color="white"
@@ -44,7 +44,11 @@ const Skill = () => {
             <Button
               size="small"
               onClick={() => setValue(0)}
-              sx={{ marginBottom: "20px", width: "7em" }}
+              sx={{
+                marginBottom: "20px",
+                width: "7em",
+                ml: { xs: "20%", sm: "0" },
+              }}
               variant="contained"
             >
               Frontend

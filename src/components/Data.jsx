@@ -26,7 +26,7 @@ export const questions = [
   },
   {
     id: "2",
-    qst: "you said you are a full stack developer,where did you prefer most? front end or backend",
+    qst: "You are a full stack developer,where did you prefer most? front end or backend",
     ans: "being a full stack developer,i can efficiently work on both frontend and backend but i loves building beautiful interfaces most i.e i prefer frontend most,but i love to complete the whole projects by myself which involves building the backend and api for the frontend that i code.",
   },
   {
@@ -37,7 +37,7 @@ export const questions = [
   {
     id: "4",
     qst: "On average how long does it takes you to complete a projects?",
-    ans: "Also this also depends on the complexity of the projects,being eager  to work,i dont like wasting time and in most cases,it takes me less than a week to complete either a frontend or backend project and like i said earlier it depends on the project.",
+    ans: "Also this also depends on the complexity of the projects,being eager  to work,i dont like wasting time and in most cases,it takes me less than a week to complete either a frontend or backend project,some even within 24 hours and like i said earlier it depends on the project.",
   },
   {
     id: "5",

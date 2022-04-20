@@ -1,80 +1,105 @@
 import React from "react";
-import { FaTimes, FaHome } from "react-icons/fa";
+import { FaTimes, FaHome, FaQuestion } from "react-icons/fa";
 import { BsPerson } from "react-icons/bs";
 import { MdWorkOutline } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
 import Typography from "@mui/material/Typography";
-// import Container from "@mui/material/Container";
-// import { style } from "./Styles";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Rightbar = ({ showside, setShowside }) => {
   return (
     <div className={showside ? "container showcontainer" : "container "}>
-      <Typography
-        variant="h6"
-        color="initial"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          marginTop: "35px",
-          marginLeft: "50px",
-          color: "white",
-        }}
-      >
-        <FaHome style={{ marginRight: "20px" }} /> Home
-      </Typography>
-      <Typography
-        variant="h6"
-        color="initial"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          marginTop: "35px",
-          marginLeft: "50px",
-          color: "white",
-        }}
-      >
-        <BsPerson style={{ marginRight: "20px" }} /> About
-      </Typography>
-      <Typography
-        variant="h6"
-        color="initial"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          marginTop: "35px",
-          marginLeft: "50px",
-          color: "white",
-        }}
-      >
-        <FaHome style={{ marginRight: "20px" }} /> Skills
-      </Typography>
-      <Typography
-        variant="h6"
-        color="initial"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          marginTop: "35px",
-          marginLeft: "50px",
-          color: "white",
-        }}
-      >
-        <MdWorkOutline style={{ marginRight: "20px" }} /> Projects
-      </Typography>
-      <Typography
-        variant="h6"
-        color="initial"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          marginTop: "35px",
-          marginLeft: "50px",
-          color: "white",
-        }}
-      >
-        <TiMessages style={{ marginRight: "20px" }} /> Contact
-      </Typography>
+      <Link to="#home" smooth style={{ textDecoration: "none" }}>
+        {" "}
+        <Typography
+          variant="h6"
+          color="initial"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "35px",
+            marginLeft: "50px",
+            color: "white",
+          }}
+        >
+          <FaHome style={{ marginRight: "20px" }} /> Home
+        </Typography>
+      </Link>
+
+      <Link to="#about" style={{ textDecoration: "none" }} smooth>
+        <Typography
+          variant="h6"
+          color="initial"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "35px",
+            marginLeft: "50px",
+            color: "white",
+          }}
+        >
+          <BsPerson style={{ marginRight: "20px" }} /> About
+        </Typography>
+      </Link>
+      <Link to="#skill" style={{ textDecoration: "none" }} smooth>
+        <Typography
+          variant="h6"
+          color="initial"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "35px",
+            marginLeft: "50px",
+            color: "white",
+          }}
+        >
+          <FaHome style={{ marginRight: "20px" }} /> Skills
+        </Typography>
+      </Link>
+      <Link to="#project" style={{ textDecoration: "none" }} smooth>
+        <Typography
+          variant="h6"
+          color="initial"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "35px",
+            marginLeft: "50px",
+            color: "white",
+          }}
+        >
+          <MdWorkOutline style={{ marginRight: "20px" }} /> Projects
+        </Typography>
+      </Link>
+      <Link to="#faq" style={{ textDecoration: "none" }} smooth>
+        <Typography
+          variant="h6"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "35px",
+            marginLeft: "50px",
+            color: "white",
+          }}
+        >
+          <FaQuestion style={{ marginRight: "20px" }} /> FAQ
+        </Typography>
+      </Link>
+      <Link to="#contact" style={{ textDecoration: "none" }} smooth>
+        <Typography
+          variant="h6"
+          color="initial"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "35px",
+            marginLeft: "50px",
+            color: "white",
+          }}
+        >
+          <TiMessages style={{ marginRight: "20px" }} /> Contact
+        </Typography>
+      </Link>
 
       <FaTimes
         style={{
