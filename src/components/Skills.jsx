@@ -69,14 +69,14 @@ const Skill = () => {
         </Grid>
         <Grid item sm={9} xs={12}>
           <Typography
-            variant="h5"
+            variant="h6"
             color="initial"
             sx={{ color: "white", marginBottom: "20px" }}
           >
             {head}
           </Typography>
           <Typography
-            variant="body1"
+            variant="caption"
             component="p"
             color="initial"
             sx={{
@@ -88,7 +88,7 @@ const Skill = () => {
             {info1}
           </Typography>
           <Typography
-            variant="body1"
+            variant="caption"
             component="p"
             color="initial"
             sx={{

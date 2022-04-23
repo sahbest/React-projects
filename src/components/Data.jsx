@@ -41,7 +41,7 @@ export const questions = [
   },
   {
     id: "5",
-    qst: "You are a react developer,can you can you work  Nextjs projects or code with plain html,css and javascript without using react or work with   other framework like vue,angular ",
+    qst: "Can you can you work  Nextjs projects or code with plain html,css and javascript without using react or work with   other framework like vue,angular ",
     ans: "Nextjs is a framework of react and of course i can work on Nextjs projects,i can also work with plain html,css and javascript but i prefer either React or Nextjs, i cannot code with Angular and Vue,who needs them anyway when i can conveniently code with React or Next.",
   },
 ];

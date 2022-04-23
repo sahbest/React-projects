@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTimes, FaHome, FaQuestion } from "react-icons/fa";
+import { FaTimes, FaHome, FaQuestion, FaNetworkWired } from "react-icons/fa";
 import { BsPerson } from "react-icons/bs";
 import { MdWorkOutline } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
@@ -10,7 +10,6 @@ const Rightbar = ({ showside, setShowside }) => {
   return (
     <div className={showside ? "container showcontainer" : "container "}>
       <Link to="#home" smooth style={{ textDecoration: "none" }}>
-        {" "}
         <Typography
           variant="h6"
           color="initial"
@@ -53,7 +52,7 @@ const Rightbar = ({ showside, setShowside }) => {
             color: "white",
           }}
         >
-          <FaHome style={{ marginRight: "20px" }} /> Skills
+          <FaNetworkWired style={{ marginRight: "20px" }} /> Skills
         </Typography>
       </Link>
       <Link to="#project" style={{ textDecoration: "none" }} smooth>
@@ -103,11 +102,11 @@ const Rightbar = ({ showside, setShowside }) => {
 
       <FaTimes
         style={{
-          fontSize: "30px",
+          fontSize: "20px",
           color: "rgba(167, 41, 41, 0.9)",
           position: "absolute",
-          top: "10px",
-          right: "15px",
+          top: "20px",
+          right: "10px",
           cursor: "pointer",
         }}
         onClick={() => setShowside(false)}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Button, Typography } from "@mui/material";
+import { FaSmile } from "react-icons/fa";
 import { style } from "./Styles";
 import emailjs from "@emailjs/browser";
 
@@ -29,27 +30,32 @@ const Contact1 = () => {
     }
     return errors;
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await setFormError(validate(formValue));
-    setIsSubmit(true);
+    const { name, desc, gmail } = initialValue;
 
-    await emailjs
-      .sendForm(
-        "service_dh0pi0d",
-        "template_y1p030k",
-        formRef.current,
-        "64L_Uepd4_yajAOOR"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    setFormValue({ name: "", gmail: "", desc: "" });
+    await setFormError(validate(formValue));
+
+    if (name.length !== "0" && desc.length !== "0" && gmail.length !== "0") {
+      emailjs
+        .sendForm(
+          "service_dh0pi0d",
+          "template_y1p030k",
+          formRef.current,
+          "64L_Uepd4_yajAOOR"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setIsSubmit(true);
+            setFormValue({ name: "", gmail: "", desc: "" });
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
   };
 
   useEffect(() => {
@@ -71,17 +77,35 @@ const Contact1 = () => {
         backgroundImage: 'url("./images/contact.jpg")',
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+        paddingBottom: "4em",
       }}
     >
-      <Typography variant="h4" color="white" align="center" my="10px">
+      <Typography
+        variant="h4"
+        color="white"
+        my="10px"
+        sx={{ textAlign: "center" }}
+      >
         CONTACT ME
+      </Typography>
+      <Typography
+        variant="body2"
+        mb={2}
+        py={1}
+        color="white"
+        sx={{ textAlign: "center" }}
+      >
+        please note that the content of this form would be sent to my Gmail
+        account
       </Typography>
       <Container
         maxWidth="xs"
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.5)",
+          mx: "1em",
           padding: "20px 35px",
           borderRadius: "10px",
+          mb: "2em",
         }}
       >
         <form ref={formRef} onSubmit={handleSubmit}>
@@ -143,7 +167,11 @@ const Contact1 = () => {
           </Button>
         </form>
         {Object.keys(formError).length === 0 && isSubmit ? (
-          <div style={{ color: "white" }}>sent succefully</div>
+          <Typography variant="caption" color="rgba(256,256,256, .7)">
+            Your message has been sent successfully,Thanks for contacting me,you
+            would get a reply shortly on your gmail account,can't wait to stark
+            working with you <FaSmile style={{ color: "white" }} />
+          </Typography>
         ) : null}
       </Container>
     </div>
